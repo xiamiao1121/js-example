@@ -8,3 +8,15 @@ function myNew (fn, ...args) {
     // 构造函数返回的结果是对象则返回该对象 result，否则返回新创建的对象 obj
     return result instanceof Object ? result : obj
   }
+
+
+  function Person(name) {
+    this.name = name;
+    this.sayName = function () {
+      console.log("name", this.name);
+    };
+  }
+
+  const person = myNew(Person, "ayetongzhi");
+  console.log("person", person);
+  person.sayName();  // ayetongzhi
