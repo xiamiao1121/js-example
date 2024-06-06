@@ -26,6 +26,10 @@
 
 - [#2814](https://github.com/XiaoMi/hiui/pull/2814) [`613c15a41`](https://github.com/XiaoMi/hiui/commit/613c15a41d783b86d86ccfb1dccd4da897e5ba9c) Thanks [@xiamiao1121](https://github.com/xiamiao1121)! - fix(select): 修复搜索时在中文输入法下按回车键弹窗会关闭的问题
 
+- [#2814](https://github.com/XiaoMi/hiui/pull/2814) [`613c15a41`](https://github.com/XiaoMi/hiui/commit/613c15a41d783b86d86ccfb1dccd4da897e5ba9c) Thanks [@xiamiao1121](https://github.com/xiamiao1121)! - fix(select): 修复搜索时在中文输入法下按回车键弹窗会关闭的问题
+
+- [#2814](https://github.com/XiaoMi/hiui/pull/2814) [`613c15a41`](https://github.com/XiaoMi/hiui/commit/613c15a41d783b86d86ccfb1dccd4da897e5ba9c) Thanks [@xiamiao1121](https://github.com/xiamiao1121)! - fix(select): 修复搜索时在中文输入法下按回车键弹窗会关闭的问题
+
 - Updated dependencies [[`084600ea6`](https://github.com/XiaoMi/hiui/commit/084600ea6e4fdec7efde79a3cc90d8ef45ca602f), [`e8498f36e`](https://github.com/XiaoMi/hiui/commit/e8498f36efe4dd42e0ef26c2e4c60298e2ce0147), [`494ebd982`](https://github.com/XiaoMi/hiui/commit/494ebd982d50a1bc57697effd8365adfa2d37132), [`b8679ce3e`](https://github.com/XiaoMi/hiui/commit/b8679ce3e7fab435fd126901e6e8b23268bcf712), [`9103ff92e`](https://github.com/XiaoMi/hiui/commit/9103ff92e490105df57e0369ed6512a10e1818de), [`3dc8c1556`](https://github.com/XiaoMi/hiui/commit/3dc8c155674bb8d702187cc4a33e684d22f04bf6), [`c2afbaf33`](https://github.com/XiaoMi/hiui/commit/c2afbaf337dc933aa3858187e0010255ee2b82d5), [`613c15a41`](https://github.com/XiaoMi/hiui/commit/613c15a41d783b86d86ccfb1dccd4da897e5ba9c), [`5d531802b`](https://github.com/XiaoMi/hiui/commit/5d531802ba9b142d448a2de2a7a8315722be0af8), [`9809ce813`](https://github.com/XiaoMi/hiui/commit/9809ce8132600cb7a3e8bb8537909bb3c3c9551b)]:
   - @hi-ui/pop-confirm@4.2.5
   - @hi-ui/table@4.5.4
