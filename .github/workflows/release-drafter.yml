@@ -37,7 +37,6 @@ jobs:
         id: changelog_reader
         uses: mindsers/changelog-reader-action@v2
         with:
-          validation_level: warn
           path: ./test.md
       - name: Create/update release
         uses: ncipollo/release-action@v1
