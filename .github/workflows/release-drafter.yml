@@ -34,12 +34,12 @@ jobs:
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Get Changelog Entry
         id: changelog_reader
         uses: mindsers/changelog-reader-action@v2
         with:
-          path: ../../CHANGELOG.md
+          path: ./CHANGELOG.md
       - name: Create/update release
         uses: ncipollo/release-action@v1
         with:
