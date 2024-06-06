@@ -39,7 +39,8 @@ jobs:
         id: changelog_reader
         uses: mindsers/changelog-reader-action@v2
         with:
-          path: ./CHANGELOG.md
+          version: 4.5.10
+          path: ../../CHANGELOG.md
       - name: Create/update release
         uses: ncipollo/release-action@v1
         with:
