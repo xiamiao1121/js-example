@@ -35,21 +35,22 @@ jobs:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Checkout Code
         uses: actions/checkout@v4
-      - name: Get Changelog Entry
-        id: changelog_reader
-        uses: mindsers/changelog-reader-action@v2
+      - name: Read ChangeLog
+        id: changelog
+        uses: juliangruber/read-file-action@v1
         with:
-          version: v4.5.10
           path: ./CHANGELOG.md
-      - name: Create/update release
-        uses: ncipollo/release-action@v1
-        with:
-          # This pulls from the "Get Changelog Entry" step above, referencing it's ID to get its outputs object.
-          # See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          tag: ${{ steps.changelog_reader.outputs.version }}
-          name: Release ${{ steps.changelog_reader.outputs.version }}
-          body: ${{ steps.changelog_reader.outputs.changes }}
-          prerelease: ${{ steps.changelog_reader.outputs.status == 'prereleased' }}
-          draft: ${{ steps.changelog_reader.outputs.status == 'unreleased' }}
-          allowUpdates: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Echo ChangeLog
+        run: echo "${{ steps.changelog.outputs.content }}"
+      # - name: Create/update release
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     # This pulls from the "Get Changelog Entry" step above, referencing it's ID to get its outputs object.
+      #     # See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+      #     tag: ${{ steps.changelog_reader.outputs.version }}
+      #     name: Release ${{ steps.changelog_reader.outputs.version }}
+      #     body: ${{ steps.changelog_reader.outputs.changes }}
+      #     prerelease: ${{ steps.changelog_reader.outputs.status == 'prereleased' }}
+      #     draft: ${{ steps.changelog_reader.outputs.status == 'unreleased' }}
+      #     allowUpdates: true
+      #     token: ${{ secrets.GITHUB_TOKEN }}
