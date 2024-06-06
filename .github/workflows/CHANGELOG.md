@@ -1,6 +1,6 @@
 # @hi-ui/hiui
 
-## 4.5.10
+## v4.5.10
 
 ### Patch Changes
 
@@ -36,7 +36,7 @@
   - @hi-ui/select@4.4.2
   - @hi-ui/date-picker@4.6.3
 
-## 4.5.9
+## [4.5.10]
 
 ### Patch Changes
 

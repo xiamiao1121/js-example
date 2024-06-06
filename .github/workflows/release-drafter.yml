@@ -33,19 +33,13 @@ jobs:
       #   #   disable-autolabeler: true
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Get version from tag
-        id: tag_name
-        run: |
-          echo "current_version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
-        shell: bash
       - name: Checkout Code
         uses: actions/checkout@v4
       - name: Get Changelog Entry
         id: changelog_reader
         uses: mindsers/changelog-reader-action@v2
         with:
-          validation_level: warn
-          version: ${{ steps.tag_name.outputs.current_version }}
+          version: 4.5.10
           path: ./CHANGELOG.md
       - name: Create/update release
         uses: ncipollo/release-action@v1
