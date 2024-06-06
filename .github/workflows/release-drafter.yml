@@ -53,7 +53,7 @@ jobs:
         uses: BinPar/read-conventional-commit-changelog@v2.0.2
         with:
           changelog-path: ./CHANGELOG.md
-          version: 4.5.8
+          version: 4.5.7
       - name: Echo ChangeLog
         run: echo "${{ steps.changelog.outputs.version-changelog }}"
       # - uses: release-drafter/release-drafter@v6
@@ -71,8 +71,8 @@ jobs:
         with:
           # This pulls from the "Get Changelog Entry" step above, referencing it's ID to get its outputs object.
           # See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          tag: 4.5.8
-          name: 4.5.8
+          tag: 4.5.7
+          name: 4.5.7
           body: ${{ steps.changelog.outputs.version-changelog }}
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
