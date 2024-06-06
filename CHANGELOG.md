@@ -3,6 +3,12 @@
 ## 4.5.10
 
 ### Patch Changes
+- [#2841](https://github.com/XiaoMi/hiui/pull/2841) [`494ebd982`](https://github.com/XiaoMi/hiui/commit/494ebd982d50a1bc57697effd8365adfa2d37132) Thanks [@zyprepare](https://github.com/zyprepare)! - fix(time-picker): 修复设置空字符串无效问题
+
+- [#2841](https://github.com/XiaoMi/hiui/pull/2841) [`494ebd982`](https://github.com/XiaoMi/hiui/commit/494ebd982d50a1bc57697effd8365adfa2d37132) Thanks [@zyprepare](https://github.com/zyprepare)! - fix(time-picker): 修复设置空字符串无效问题
+
+- [#2841](https://github.com/XiaoMi/hiui/pull/2841) [`494ebd982`](https://github.com/XiaoMi/hiui/commit/494ebd982d50a1bc57697effd8365adfa2d37132) Thanks [@zyprepare](https://github.com/zyprepare)! - fix(time-picker): 修复设置空字符串无效问题
+
 
 - [#2841](https://github.com/XiaoMi/hiui/pull/2841) [`494ebd982`](https://github.com/XiaoMi/hiui/commit/494ebd982d50a1bc57697effd8365adfa2d37132) Thanks [@zyprepare](https://github.com/zyprepare)! - fix(time-picker): 修复设置空字符串无效问题
 
