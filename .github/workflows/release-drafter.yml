@@ -35,13 +35,21 @@ jobs:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Checkout Code
         uses: actions/checkout@v4
+      # - name: Read ChangeLog
+      #   id: changelog
+      #   uses: juliangruber/read-file-action@v1
+      #   with:
+      #     path: ./CHANGELOG.md
+      # - name: Echo ChangeLog
+      #   run: echo "${{ steps.changelog.outputs.content }}"
       - name: Read ChangeLog
         id: changelog
-        uses: juliangruber/read-file-action@v1
+        uses: BinPar/read-conventional-commit-changelog@v2.0.2
         with:
-          path: ./CHANGELOG.md
+          changelog-path: ./CHANGELOG.md
+          version: v4.5.10
       - name: Echo ChangeLog
-        run: echo "${{ steps.changelog.outputs.content }}"
+        run: echo "${{ steps.changelog.outputs.version-changelog }}"
       # - name: Create/update release
       #   uses: ncipollo/release-action@v1
       #   with:
