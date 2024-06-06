@@ -58,8 +58,8 @@ jobs:
         with:
           # This pulls from the "Get Changelog Entry" step above, referencing it's ID to get its outputs object.
           # See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          tag: ${{ steps.changelog.inputs.version }}
-          name: ${{ steps.changelog.inputs.version }}
+          tag: v4.5.10
+          name: v4.5.10
           body: ${{ steps.changelog.outputs.version-changelog }}
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
