@@ -26,13 +26,6 @@ jobs:
       #    echo "GHE_HOST=${GITHUB_SERVER_URL##https:\/\/}" >> $GITHUB_ENV
 
       # Drafts your next Release notes as Pull Requests are merged into "master"
-      # - uses: release-drafter/release-drafter@v6
-      #   # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
-      #   with:
-      #     config-name: release-drafter-config.yml
-      #   #   disable-autolabeler: true
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Checkout Code
         uses: actions/checkout@v4
       # - name: Read ChangeLog
@@ -46,19 +39,27 @@ jobs:
         id: changelog
         uses: BinPar/read-conventional-commit-changelog@v2.0.2
         with:
-          changelog-path: ./CHANGELOG.md
+          changelog-path: ../../CHANGELOG.md
           version: v4.5.10
       - name: Echo ChangeLog
         run: echo "${{ steps.changelog.outputs.version-changelog }}"
-      # - name: Create/update release
-      #   uses: ncipollo/release-action@v1
+      # - uses: release-drafter/release-drafter@v6
+      #   # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
       #   with:
-      #     # This pulls from the "Get Changelog Entry" step above, referencing it's ID to get its outputs object.
-      #     # See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-      #     tag: ${{ steps.changelog_reader.outputs.version }}
-      #     name: Release ${{ steps.changelog_reader.outputs.version }}
-      #     body: ${{ steps.changelog_reader.outputs.changes }}
-      #     prerelease: ${{ steps.changelog_reader.outputs.status == 'prereleased' }}
-      #     draft: ${{ steps.changelog_reader.outputs.status == 'unreleased' }}
-      #     allowUpdates: true
-      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     config-name: release-drafter-config.yml
+      #     name: steps.changelog.inputs.version
+      #     tag: steps.changelog.inputs.version
+
+      #   #   disable-autolabeler: true
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create/update release
+        uses: ncipollo/release-action@v1
+        with:
+          # This pulls from the "Get Changelog Entry" step above, referencing it's ID to get its outputs object.
+          # See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          tag: ${{ steps.changelog.inputs.version }}
+          name: ${{ steps.changelog.inputs.version }}
+          body: ${{ steps.changelog.outputs.version-changelog }}
+          allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}
