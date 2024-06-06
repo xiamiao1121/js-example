@@ -39,7 +39,7 @@ jobs:
         id: changelog
         uses: BinPar/read-conventional-commit-changelog@v2.0.2
         with:
-          changelog-path: ../../CHANGELOG.md
+          changelog-path: ./CHANGELOG.md
           version: v4.5.10
       - name: Echo ChangeLog
         run: echo "${{ steps.changelog.outputs.version-changelog }}"
