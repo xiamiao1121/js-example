@@ -39,6 +39,15 @@ jobs:
         run: pwd
       - name: Echo ls
         run: ls
+      - name: Package.json info
+        id: package
+        uses: rexdefuror/read-package-json@v1.0.5
+        with:
+          file: package.json
+          path: ./src
+      - name: Echo Package
+        run: echo "${{steps.package.outputs }}"
+
       - name: Read ChangeLog
         id: changelog
         uses: BinPar/read-conventional-commit-changelog@v2.0.2
